@@ -17,11 +17,11 @@ public class Main {
 
     private static void classAttendanceTrackerInit() {
 
-        ArrayList<String> signIns = new ArrayList<String>();
+        ArrayList<String> signIns = new ArrayList<>();
         System.out.println("Enter Students names: ");
         String name = input.nextLine();
         int counter =0;
-        while(!name.toLowerCase().equals("done")) {
+        while(!name.equalsIgnoreCase("done")) {
 
             if(!containsCaseInsensitive(name, signIns)) {
                 signIns.add(name);
@@ -61,7 +61,7 @@ public class Main {
     private static boolean containsCaseInsensitive(String str, ArrayList<String> arr) {
 
         for(String s: arr) {
-            if(s.toLowerCase().equals(str.toLowerCase())) {
+            if(s.equalsIgnoreCase(str)) {
                 return true;
             }
         }
